@@ -6,6 +6,9 @@
     <li>
       Reservation #{{ reservation.id }} - {{ reservation.customer.first_name }} {{ reservation.customer.last_name }}
       ({{ reservation.pickup_date }} → {{ reservation.dropoff_date }})
+      <a href="{% url 'edit_reservation' reservation.id %}">Edit</a>
+      <!-- Delete Button -->
+      <a href="{% url 'delete_reservation' reservation.id %}">Delete</a>
     </li>
   {% endfor %}
 </ul>

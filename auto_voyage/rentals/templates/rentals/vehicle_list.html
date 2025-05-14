@@ -3,7 +3,11 @@
 <h2>Vehicles</h2>
 <ul>
   {% for vehicle in vehicles %}
-    <li>{{ vehicle.make }} {{ vehicle.model }} ({{ vehicle.year }}) - {{ vehicle.status }}</li>
+    <li>{{ vehicle.make }} {{ vehicle.model }} ({{ vehicle.year }}) - {{ vehicle.status }}
+      <a href="{% url 'edit_vehicle' vehicle.id %}">Edit</a>
+      <!-- Delete Button -->
+      <a href="{% url 'delete_vehicle' vehicle.id %}">Delete</a>
+    </li>
   {% endfor %}
 </ul>
 <a href="{% url 'add_vehicle' %}">Add Vehicle</a>
