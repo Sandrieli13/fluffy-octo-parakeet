@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=C:\Users\tskit\OneDrive\Desktop\CIS 3400 - RENAME\auto_voyage\venv
+set VIRTUAL_ENV=C:\Users\tskit\OneDrive\Desktop\CIS 3400 - RENAME\fluffy-octo-parakeet\auto_voyage\venv
 
 if not defined PROMPT set PROMPT=$P$G
 
