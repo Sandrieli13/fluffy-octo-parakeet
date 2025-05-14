@@ -3,7 +3,7 @@
 <h2>Vehicles</h2>
 <ul>
   {% for vehicle in vehicles %}
-    <li>{{ vehicle.Make }} {{ vehicle.Model }} ({{ vehicle.Year }}) - {{ vehicle.Status }}</li>
+    <li>{{ vehicle.make }} {{ vehicle.model }} ({{ vehicle.year }}) - {{ vehicle.status }}</li>
   {% endfor %}
 </ul>
 <a href="{% url 'add_vehicle' %}">Add Vehicle</a>

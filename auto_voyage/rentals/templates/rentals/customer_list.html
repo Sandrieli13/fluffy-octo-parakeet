@@ -3,7 +3,7 @@
 <h2>Customers</h2>
 <ul>
   {% for customer in customers %}
-    <li>{{ customer.First_Name }} {{ customer.Last_Name }} - {{ customer.Email }}</li>
+    <li>{{ customer.first_name }} {{ customer.last_name }} - {{ customer.email }}</li>
   {% endfor %}
 </ul>
 <a href="{% url 'add_customer' %}">Add Customer</a>

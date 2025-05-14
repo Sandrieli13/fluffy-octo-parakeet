@@ -4,7 +4,7 @@
 <ul>
   {% for record in records %}
     <li>
-      {{ record.Vehicle_ID.Make }} {{ record.Vehicle_ID.Model }} - {{ record.Service_Type }} on {{ record.Service_Date }}
+      {{ record.vehicle.make }} {{ record.vehicle.model }} - {{ record.service_type }} on {{ record.Service_Date }}
     </li>
   {% endfor %}
 </ul>

@@ -4,8 +4,8 @@
 <ul>
   {% for reservation in reservations %}
     <li>
-      Reservation #{{ reservation.Reservation_ID }} - {{ reservation.Customer_ID.First_Name }} {{ reservation.Customer_ID.Last_Name }}
-      ({{ reservation.Pickup_Date }} → {{ reservation.Dropoff_Date }})
+      Reservation #{{ reservation.id }} - {{ reservation.customer.first_name }} {{ reservation.customer.last_name }}
+      ({{ reservation.pickup_date }} → {{ reservation.dropoff_date }})
     </li>
   {% endfor %}
 </ul>
