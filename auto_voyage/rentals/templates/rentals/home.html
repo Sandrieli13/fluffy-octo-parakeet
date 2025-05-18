@@ -1,4 +1,51 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>HOME PAGE</h1>
+<div class="jumbotron text-center bg-primary text-white p-5 rounded shadow-lg">
+  <h1 class="display-4 fw-bold">Welcome to Prime Rentals</h1>
+  <p class="lead">Effortless vehicle booking, management & maintenance tracking in one place.</p>
+  <hr class="my-4">
+  <div class="d-flex justify-content-center gap-3 flex-wrap">
+    <a href="{% url 'customer_list' %}" class="btn btn-light btn-lg">Customers</a>
+    <a href="{% url 'vehicle_list' %}" class="btn btn-light btn-lg">Vehicles</a>
+    <a href="{% url 'reservation_list' %}" class="btn btn-light btn-lg">Reservations</a>
+    <a href="{% url 'maintenance_list' %}" class="btn btn-light btn-lg">Maintenance</a>
+  </div>
+</div>
+
+<div class="container mt-5">
+  <div class="row text-center">
+    <div class="col-md-3">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">Vehicles</h5>
+          <p class="card-text">Track availability and details of your fleet.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">Customers</h5>
+          <p class="card-text">Manage customer data and registration details.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">Reservations</h5>
+          <p class="card-text">View and handle rental bookings in real time.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">Maintenance</h5>
+          <p class="card-text">Log and monitor maintenance records.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}

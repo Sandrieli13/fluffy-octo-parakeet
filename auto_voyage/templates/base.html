@@ -1,63 +1,109 @@
-<!-- rentals/templates/base.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auto Voyage Rentals</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .navbar-brand {
-            font-weight: bold;
-        }
-        .sidebar {
-            min-height: calc(100vh - 56px);
-            background-color: #f8f9fa;
-        }
-        .content {
-            padding: 20px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AutoVoyage Rentals</title>
+  <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Rubik', sans-serif;
+      background-color: #f5f7fa;
+    }
+
+    .navbar {
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-brand {
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .nav-link.active, .nav-link:hover {
+      font-weight: 500;
+      color: #fff !important;
+      background-color: #315893;
+      border-radius: 0.375rem;
+    }
+
+    .sidebar {
+      background-color: #fff;
+      border-right: 1px solid #dee2e6;
+      height: 100vh;
+      position: sticky;
+      top: 0;
+      padding: 1.5rem 1rem;
+      box-shadow: 0 0 8px rgba(0,0,0,0.05);
+    }
+
+    .sidebar a {
+      color: #333;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 1rem;
+      padding: 0.5rem 0.75rem;
+      border-radius: 0.375rem;
+      transition: 0.2s ease;
+    }
+
+    .sidebar a:hover {
+      background-color: #f1f1f1;
+    }
+
+    .content {
+      padding: 2rem;
+    }
+
+    footer {
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #666;
+    }
+  </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/">Auto Voyage Rentals</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'customer_list' %}">Customers</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'vehicle_list' %}">Vehicles</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'reservation_list' %}">Reservations</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'maintenance_list' %}">Maintenance</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Main Content -->
+  <!-- Top Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container-fluid">
-        <div class="row">
-            <!-- Content -->
-            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 content">
-                {% block content %}{% endblock %}
-            </main>
-        </div>
+      <a class="navbar-brand" href="/">AutoVoyage Rentals</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+        <span class="navbar-toggler-icon"></span>
+      </button>
     </div>
+  </nav>
 
-    <!-- Bootstrap JS Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Main Layout -->
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Sidebar -->
+      <aside class="col-md-3 col-lg-2 d-md-block sidebar">
+        <nav>
+          <a href="{% url 'customer_list' %}">👥 Customers</a>
+          <a href="{% url 'vehicle_list' %}">🚗 Vehicles</a>
+          <a href="{% url 'reservation_list' %}">📅 Reservations</a>
+          <a href="{% url 'maintenance_list' %}">🛠 Maintenance</a>
+        </nav>
+      </aside>
+
+      <!-- Content Area -->
+      <main class="col-md-9 ms-sm-auto col-lg-10 content">
+        {% block content %}{% endblock %}
+      </main>
+    </div>
+  </div>
+
+  <footer class="bg-light mt-5">
+    <p>&copy; {{ now.year }} Auto Voyage Rentals. All rights reserved.</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
